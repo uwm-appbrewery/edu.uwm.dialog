@@ -4,33 +4,38 @@
 	height: Ti.UI.FILL,
 	width: Ti.UI.FILL,
 	backgroundColor: "#000",
-	opacity: "0.5"
+	opacity: "0"
 },
-"#dialogBox": {
+"#dialogBox": {	
 	height: "220dp",
 	width: "250dp",
-	borderRadius: "4"
+	borderRadius: "4",
+	backgroundColor: "#fff"
 },
 "#dialogBoxTone1": {
+	opacity: 0,
 	top: "0dp",
-	height: "50%",
+	height: "110dp",
+	width: Ti.UI.FILL,
 	backgroundColor: "#aaa",
 },
 "#dialogBoxTone2": {
 	layout: "vertical",
-	bottom: "0dp",
-	height: "50%",
+	top: "110dp",
+	height: "110dp",
 	width: Ti.UI.FILL,
 	backgroundColor: "#fff"
 },
 "#dialogBoxImage": {
+	opacity: 0,
 	height: "67dp",
 	width: "69dp"
 },
 "#dialogBoxLabel": {
+	opacity: 0,
 	top: "16.5dp",
-	left: "6.7%",
 	right: "6.7%",
+	left: "6.7%",
 	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
 	color: "#000",
 	font: {
@@ -41,30 +46,8 @@
 "#dialogBoxButtons": {
 	layout: "absolute",
 	top: "16.5dp",
-	bottom: "16.5dp",
-	left: "6.7%",
 	right: "6.7%",
+	left: "6.7%",
 	height: Ti.UI.SIZE,
 	width: Ti.UI.FILL
-},
-".dialogBoxButton": {
-	height: "30dp",
-	borderRadius: "2.5",
-	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
-	color: "#fff",
-	font: {
-		fontSize: "12"
-	}
-},
-"#dialogBoxButton1": {
-	left: "0",
-	width: "30%",
-	text: "OK",
-	backgroundColor: "#aaa"
-},
-"#dialogBoxButton2": {
-	right: "0",
-	width: "61.7%",
-	text: "CANCEL",
-	backgroundColor: "#444"
 }

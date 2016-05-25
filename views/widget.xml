@@ -1,17 +1,15 @@
 <Alloy>
-	<View id="Wrapper" name="dialogBoxWidget">
+	<View id="dialogBoxWidget">
 		<View id="dimmedBackground"/>
 		<View id="dialogBox">
 			<View id="dialogBoxTone1">
 				<ImageView id="dialogBoxImage"/>
 			</View>
-			<View id="dialogBoxTone2">
+			<ScrollView id="dialogBoxTone2">
 				<Label id="dialogBoxLabel"/>
 				<View id="dialogBoxButtons">
-					<Label class="dialogBoxButton" id="dialogBoxButton1"/>
-					<Label class="dialogBoxButton" id="dialogBoxButton2"/>
 				</View>
-			</View>
+			</ScrollView>
 		</View>
 	</View>
 </Alloy>
