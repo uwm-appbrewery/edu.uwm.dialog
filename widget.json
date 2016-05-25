@@ -1,12 +1,12 @@
 {
-	"id": "edu.uwm.dialog",
-	"name": "edu.uwm.dialog",
-	"description" : "A customizable dialog box Alloy Widget.",
+	"id": "edu.uwm.dialogBox",
+	"name": "edu.uwm.dialogBox",
+	"description" : "An alert box with customizable colors, text, and button events.",
 	"author": "Christopher Sampon",
-	"version": "1.0",
+	"version": "1.4",
 	"copyright":"Copyright 2013 Board of Regents for University of Wisconsin System",
 	"license":"Apache 2.0",
-	"min-alloy-version": "1.3",
+	"min-alloy-version": "1.1",
 	"min-titanium-version":"3.0",
 	"tags":"",
 	"platforms":"android,ios"
