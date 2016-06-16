@@ -1,3 +1,7 @@
+".padding": {
+	height: "16.5dp",
+	width: "16.5dp"
+}
 "#dimmedBackground": {
 	layout: "absolute",
 	top: "0dp",
@@ -7,35 +11,47 @@
 	opacity: "0"
 },
 "#dialogBox": {	
-	height: "220dp",
+	height: Ti.UI.SIZE,
 	width: "250dp",
 	borderRadius: "4",
-	backgroundColor: "#fff"
+	backgroundColor: "#fff",
+	layout: "vertical"
 },
 "#dialogBoxTone1": {
+	layout: "vertical",
 	opacity: 0,
 	top: "0dp",
-	height: "110dp",
+	height: Ti.UI.SIZE,
 	width: Ti.UI.FILL,
-	backgroundColor: "#aaa",
+	backgroundColor: Alloy.Globals.settings.colors.yellow,
 },
 "#dialogBoxTone2": {
 	layout: "vertical",
-	top: "110dp",
-	height: "110dp",
+	top: "0dp",
+	height: Ti.UI.SIZE,
 	width: Ti.UI.FILL,
 	backgroundColor: "#fff"
 },
-"#dialogBoxImage": {
+"#dialogBoxTitle": {
 	opacity: 0,
-	height: "67dp",
-	width: "69dp"
+	top: "16.5dp",
+	right: "6.7%",
+	left: "6.7%",
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	color: "#000",
+	'font': {
+		'fontSize': "11dp"
+	},
+	text: "Alert"
 },
 "#dialogBoxLabel": {
 	opacity: 0,
 	top: "16.5dp",
 	right: "6.7%",
 	left: "6.7%",
+	'font': {
+		'fontSize': "13dp"
+	},
 	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
 	color: "#000",
 	font: {
@@ -46,6 +62,7 @@
 "#dialogBoxButtons": {
 	layout: "absolute",
 	top: "16.5dp",
+	bottom: "16.5dp",
 	right: "6.7%",
 	left: "6.7%",
 	height: Ti.UI.SIZE,
