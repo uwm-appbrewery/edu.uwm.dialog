@@ -3,7 +3,8 @@
 		<View id="dimmedBackground"/>
 		<View id="dialogBox">
 			<View id="dialogBoxTone1">
-				<ImageView id="dialogBoxImage"/>
+				<Label id="dialogBoxTitle"/>
+				<View class="padding"/>
 			</View>
 			<ScrollView id="dialogBoxTone2">
 				<Label id="dialogBoxLabel"/>

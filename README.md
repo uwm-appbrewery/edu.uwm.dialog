@@ -8,7 +8,7 @@ An alert box with customizable colors, text, and button events.
 var dialogBox = {
 	'boxColor1': '#aaa',
 	'boxColor2': '#fff',
-	'image': '',
+	'title': '',
 	'label': {
 		'color': '#000',
 		'text': 'Click Button 3 to Close.'
@@ -49,7 +49,7 @@ Parameter                | Type           | Default                 |
 :-----------------------:|:--------------:|:-----------------------:|
 `boxColor1`              | ***String***   | '#aaa'                  |
 `boxColor2`              | ***String***   | '#fff'                  |
-`image`                  | ***String***   | ''                      |
+`title`                  | ***String***   | ''                      |
 `label`                  | ***Object***   |                         |
 `label.color`            | ***String***   | '#000'                  |
 `label.text`             | ***String***   | 'Click OK to continue.' |
@@ -158,6 +158,8 @@ animateShrink($.dialogBox,function(e) {
 	* Made Android specific animations that are simpler
 * 1.4
 	* Allowed for more than 2 buttons to be displayed
+* 1.5
+	* Changed widget to use a title instead of an image
 
 ###License
 

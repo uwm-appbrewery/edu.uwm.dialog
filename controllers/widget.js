@@ -11,17 +11,17 @@ buildButtons = function(buttons) {
 					opacity: 0,
 					borderRadius: "2.5",
 					textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
-					color: "#fff",
+					color: button.color || "#000",
 					font: {
 						fontSize: "12"
 					}
 				});
 			if(buttons.length === 2) {
 				if(i === 0) {
-					buttonText.width = "30%";
+					buttonText.width = "40%";
 					buttonText.left = 0;
 				} else {
-					buttonText.width = "61.7%";
+					buttonText.width = "40%";
 					buttonText.right = 0;
 				}
 			} else {
@@ -33,8 +33,8 @@ buildButtons = function(buttons) {
 				buttonText.bottom = "10dp";
 			}
 			buttonText.addEventListener("click", function() {
-				if(button.clickEvent) button.clickEvent();
 				if(button.shouldClose === true) close();
+				if(button.clickEvent) button.clickEvent();
 			});
 			buttonElements.push(buttonText);
 			$.dialogBoxButtons.add(buttonText);
@@ -47,7 +47,9 @@ buildButtons = function(buttons) {
  * @param {Object}    properties Different properties to customize the dialog box
  * @param {String}   [properties.boxColor1 = "#aaa"] BackgroundColor for the first half of dialog box
  * @param {String}   [properties.boxColor2 = "#fff"] BackgroundColor for the second half of dialog box
- * @param {String}   [properties.image = ""] ImageSource for the image
+ * @param {Object}    properties.title Different properties to customize the title
+ * @param {String}   [properties.title.color = "#FFF"] Color for the title
+ * @param {String}   [properties.title.text = "Alert"] Text for the title
  * @param {Object}    properties.label Different properties to customize the label
  * @param {String}   [properties.label.color = "#000"] Color for the label
  * @param {String}   [properties.label.text = "Click OK to continue."] Text for the label
@@ -64,8 +66,9 @@ applyProperties = function(properties) {
 	//Dialog Box properties
 	$.dialogBoxTone1.backgroundColor = (properties.boxColor1)? properties.boxColor1 : '#aaa';
 	$.dialogBoxTone2.backgroundColor = (properties.boxColor2)? properties.boxColor2 : '#fff';
-	//Image properties
-	$.dialogBoxImage.backgroundImage = (properties.image)? properties.image : WPATH('/images/no.png');
+	//Title Properties
+	$.dialogBoxTitle.color = (properties.title && properties.title.color)? properties.title.color : "#fff";
+	$.dialogBoxTitle.text = (properties.title && properties.title.text)? properties.title.text : "Alert";
 	//Label properties
 	$.dialogBoxLabel.color = (properties.label && properties.label.color)? properties.label.color : '#000';
 	$.dialogBoxLabel.text = (properties.label && properties.label.text !== undefined)? properties.label.text : 'Click OK to continue.';
@@ -180,7 +183,7 @@ open = function() {
 	if(OS_ANDROID) {
 		//Fade Open
 		animateOpacity($.dialogBoxTone1,1,250);
-		$.dialogBoxImage.opacity = 1;
+		$.dialogBoxTitle.opacity = 1;
 		for(var i=0; i<buttonElements.length; i++) {
 			buttonElements[i].opacity = 1;
 		}
@@ -209,7 +212,7 @@ close = function() {
 	if(OS_ANDROID) {
 		//Fade Close
 		$.dialogBoxTone1.opacity = 0;
-		$.dialogBoxImage.opacity = 0;
+		$.dialogBoxTitle.opacity = 0;
 		for(var i=0; i<buttonElements.length; i++) {
 			buttonElements[i].opacity = 0;
 		}
